@@ -25,12 +25,13 @@
         Telefono_ = String.Empty
         Correo_ = String.Empty
     End Sub
-    Public Sub New(ByVal nombre As String, apellidoPaterno As String, ByVal fechaNacimiento As DateTime, ByVal telefono As String, ByVal correo As String)
-        MyBase.New(nombre, fechaNacimiento)
+    Public Sub New(ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal fechaNacimiento As DateTime, ByVal telefono As String, ByVal correo As String)
+        MyBase.New(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento)
         Me.Telefono_ = telefono
         Me.Correo_ = correo
     End Sub
-    Public Sub New(nombre As String, apellidoPaterno As String, apellidoMaterno As String, fechaNacimiento As Date, correo As String, telefono As String)
-        MyBase.New(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, correo, telefono)
-    End Sub
+    Public Overrides Function ToString() As String
+        Return MyBase.ToString() & " " & correo & " " & telefono
+    End Function
+
 End Class

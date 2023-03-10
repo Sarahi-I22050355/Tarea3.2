@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Tarea3.2", "Tarea3.2.vbproj", "{7830D8EF-97D5-4F3B-A59B-0843585F86AD}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Tarea3.2", "Tarea3.2.vbproj", "{7830D8EF-97D5-4F3B-A59B-0843585F86AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clases", "Clases", "{9E0951DF-3216-4BB1-AD35-EFA27056AA48}"
+	ProjectSection(SolutionItems) = preProject
+		Contacto.vb = Contacto.vb
+		Persona.vb = Persona.vb
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

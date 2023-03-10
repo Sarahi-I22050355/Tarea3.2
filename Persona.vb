@@ -40,11 +40,11 @@
             Return CInt((DateTime.Now - FechaNacimiento_).TotalDays / 365.25)
         End Get
     End Property
-    Public Sub New(nombre As String)
+    Public Sub New()
         nombre = String.Empty
         apellidoPaterno = String.Empty
         apellidoMaterno = String.Empty
-        fechaNacimiento = DateTime.MinValue
+        fechaNacimiento = Nothing
     End Sub
     Public Sub New(ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal fechaNacimiento As DateTime)
         Me.Nombre_ = nombre
@@ -52,13 +52,8 @@
         Me.ApellidoMaterno_ = apellidoMaterno
         Me.FechaNacimiento_ = fechaNacimiento
     End Sub
-    Public Sub New()
-    End Sub
-    Public Sub New(nombre As String, fechaNacimiento1 As Date)
-        Me.New(nombre)
-    End Sub
-    Public Sub New(nombre As String, apellidoPaterno As String, apellidoMaterno As String, fechaNacimiento As Date, correo As String, telefono As String)
-        Me.New(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento)
-    End Sub
+    Public Overrides Function ToString() As String
+        Return nombre & " " & apellidoPaterno & " " & apellidoMaterno & " " & fechaNacimiento.ToString("dd/MM/yyyy") & " " & Edad
+    End Function
 End Class
 

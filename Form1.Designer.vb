@@ -38,15 +38,15 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dataGridViewPersonas = New System.Windows.Forms.DataGridView()
-        Me.nudNumPersonas = New System.Windows.Forms.NumericUpDown()
-        Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nudNumPersonas = New System.Windows.Forms.NumericUpDown()
+        Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         CType(Me.dataGridViewPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudNumPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -198,28 +198,13 @@ Partial Class Form1
         Me.dataGridViewPersonas.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.dataGridViewPersonas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataGridViewPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridViewPersonas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column7, Me.Column6, Me.Column5})
+        Me.dataGridViewPersonas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column7, Me.Column5, Me.Column6})
         Me.dataGridViewPersonas.Location = New System.Drawing.Point(337, 34)
         Me.dataGridViewPersonas.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.dataGridViewPersonas.Name = "dataGridViewPersonas"
         Me.dataGridViewPersonas.RowTemplate.Height = 29
         Me.dataGridViewPersonas.Size = New System.Drawing.Size(443, 372)
         Me.dataGridViewPersonas.TabIndex = 10
-        '
-        'nudNumPersonas
-        '
-        Me.nudNumPersonas.Location = New System.Drawing.Point(113, 34)
-        Me.nudNumPersonas.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.nudNumPersonas.Name = "nudNumPersonas"
-        Me.nudNumPersonas.Size = New System.Drawing.Size(65, 27)
-        Me.nudNumPersonas.TabIndex = 18
-        '
-        'dtpFechaNacimiento
-        '
-        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(166, 233)
-        Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
-        Me.dtpFechaNacimiento.Size = New System.Drawing.Size(162, 27)
-        Me.dtpFechaNacimiento.TabIndex = 6
         '
         'Column1
         '
@@ -251,17 +236,33 @@ Partial Class Form1
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
         '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Telefono"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
         'Column6
         '
         Me.Column6.HeaderText = "Correo Electronico"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
         '
-        'Column5
+        'nudNumPersonas
         '
-        Me.Column5.HeaderText = "Telefono"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
+        Me.nudNumPersonas.Location = New System.Drawing.Point(113, 34)
+        Me.nudNumPersonas.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.nudNumPersonas.Name = "nudNumPersonas"
+        Me.nudNumPersonas.Size = New System.Drawing.Size(65, 27)
+        Me.nudNumPersonas.TabIndex = 18
+        '
+        'dtpFechaNacimiento
+        '
+        Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(166, 233)
+        Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
+        Me.dtpFechaNacimiento.Size = New System.Drawing.Size(162, 27)
+        Me.dtpFechaNacimiento.TabIndex = 6
         '
         'Form1
         '
@@ -320,6 +321,6 @@ Partial Class Form1
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
 End Class

@@ -9,10 +9,9 @@ Public Class Form1
     End Sub
     Private Sub ActualizarTabla()
         dataGridViewPersonas.Rows.Clear()
-
         For i As Integer = 0 To indice - 1
-            Dim nuevoContacto As Contacto = contactos(i)
-            dataGridViewPersonas.Rows.Add(contactos(i).Nombre_, contactos(i).ApellidoPaterno_, contactos(i).ApellidoMaterno_, contactos(i).FechaNacimiento_.ToString("dd/MM/yyyy"), contactos(i).Edad, contactos(i).Correo_, contactos(i).Telefono_)
+            Dim celdas() As String = contactos(i).ToString().Split(" "c)
+            dataGridViewPersonas.Rows.Add(celdas(0), celdas(1), celdas(2), celdas(3), celdas(4), celdas(5), celdas(6))
         Next
     End Sub
     ''' <summary>
