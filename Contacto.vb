@@ -9,7 +9,7 @@
             Return telefono
         End Get
         Set(value As String)
-            telefono = value.Replace(" ", "").Replace("-", "")
+            telefono = value.Replace(" ", "").Replace("-", "").Substring(0, 10)
         End Set
     End Property
     Public Property Correo_ As String
@@ -22,8 +22,8 @@
     End Property
     Public Sub New()
         MyBase.New()
-        Telefono_ = String.Empty
-        Correo_ = String.Empty
+        telefono = String.Empty
+        correo = String.Empty
     End Sub
     Public Sub New(ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal fechaNacimiento As DateTime, ByVal telefono As String, ByVal correo As String)
         MyBase.New(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento)

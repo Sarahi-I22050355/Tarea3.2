@@ -8,7 +8,7 @@
             Return nombre
         End Get
         Set(value As String)
-            nombre = value
+            nombre = value.ToUpper()
         End Set
     End Property
     Public Property ApellidoPaterno_ As String
@@ -16,7 +16,7 @@
             Return apellidoPaterno
         End Get
         Set(value As String)
-            apellidoPaterno = value
+            apellidoPaterno = value.ToUpper()
         End Set
     End Property
     Public Property ApellidoMaterno_ As String
@@ -24,7 +24,7 @@
             Return apellidoMaterno
         End Get
         Set(value As String)
-            apellidoMaterno = value
+            apellidoMaterno = value.ToUpper()
         End Set
     End Property
     Public Property FechaNacimiento_ As DateTime

@@ -29,7 +29,7 @@ Public Class Form1
         End Try
     End Function
 
-    Private Sub buttonAceptar_Click(sender As Object, e As EventArgs) Handles buttonAceptar.Click
+    Private Sub ButtonAceptar_Click(sender As Object, e As EventArgs) Handles buttonAceptar.Click
         Dim numMaxPersonas As Integer
         Dim esNumero As Boolean = Integer.TryParse(nudNumPersonas.Text, numMaxPersonas)
 
@@ -58,23 +58,23 @@ Public Class Form1
 
     End Sub
 
-    Private Sub buttonAgregar_Click(sender As Object, e As EventArgs) Handles buttonAgregar.Click
-        Dim nombre As String = textBoxNombre.Text.Trim().ToUpper()
-        Dim apellidoPaterno As String = textBoxApellidoPaterno.Text.Trim().ToUpper()
-        Dim apellidoMaterno As String = textBoxApellidoMaterno.Text.Trim().ToUpper()
+    Private Sub ButtonAgregar_Click(sender As Object, e As EventArgs) Handles buttonAgregar.Click
+        Dim nombre As String = textBoxNombre.Text
+        Dim apellidoPaterno As String = textBoxApellidoPaterno.Text
+        Dim apellidoMaterno As String = textBoxApellidoMaterno.Text
 
         If String.IsNullOrEmpty(nombre) OrElse String.IsNullOrEmpty(apellidoPaterno) OrElse String.IsNullOrEmpty(apellidoMaterno) Then
             MessageBox.Show("Por favor, ingrese los datos completos de la persona.")
             Return
         End If
-        Dim telefono As String = textBoxTelefono.Text.Trim()
+        Dim telefono As String = textBoxTelefono.Text
 
         If String.IsNullOrEmpty(telefono) OrElse telefono.Length < 10 Then
             MessageBox.Show("Por favor, ingrese un número de teléfono válido.")
             Return
         End If
-
-        If Not Valido(textBoxCorreoElectronico.Text) Then
+        Dim correo As String = textBoxCorreoElectronico.Text
+        If Not Valido(correo) Then
             MessageBox.Show("El correo electrónico ingresado no es válido, por favor inténtalo nuevamente.")
             Return
         End If
@@ -84,8 +84,7 @@ Public Class Form1
             Return
         End If
         Dim fechaNacimiento As Date = dtpFechaNacimiento.Value
-        Dim correo As String = textBoxCorreoElectronico.Text
-        Dim nuevoContacto As Contacto = New Contacto(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, correo, telefono)
+        Dim nuevoContacto As New Contacto(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, telefono, correo)
         contactos(indice) = nuevoContacto
         indice += 1
         ActualizarTabla()
